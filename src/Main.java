@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Random;
 import java.util.Set;
 
 public class Main {
@@ -20,10 +21,18 @@ public class Main {
     
     
     public static void main(String[] args) {
-        ArrayList<Example> trainExamples = new ArrayList<>(); 
+        final ArrayList<Example> trainExamples = new ArrayList<>(); 
+        ArrayList<Example> testExamples = new ArrayList<>(); 
+        
         new PerceptronFileRead(trainFile, trainExamples).processFile(2, null);
+        new PerceptronFileRead(testFile, testExamples).processFile();
+        
         System.out.println(trainExamples);
-        PerceptronClassifier pc = new PerceptronClassifier(0.1, trainExamples);
+        
+       // PerceptronClassifier PC = new PerceptronClassifier(1000, trainExamples);
+              //  RewardPunishment PC = new RewardPunishment(2, trainExamples);
+ Pocket PC = new Pocket(2, trainExamples);
+        System.out.println("Accuracy: "+ PC.test(testExamples));
         
     }
 
