@@ -24,8 +24,8 @@ public class RewardPunishment {
         
         this.learnRate = initialLearnRate;
         try {
-            Double arr[] = {-1000.0, 12.0, 10.0};
-            this.weightVector = new Vector(arr);
+            //Double arr[] = {-1000.0, 12.0, 10.0};
+            this.weightVector = new Vector(examples.get(0).featureVector.size());
             System.err.println(weightVector);
         } catch (Exception e) {
             e.printStackTrace();

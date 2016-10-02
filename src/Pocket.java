@@ -9,7 +9,7 @@ public class Pocket {
     double learnRate; //ro
     Vector weightVector;
     double bias = 1;
-    int UPPER_LIMIT = 5;
+    int UPPER_LIMIT = 100;
 
     public Pocket(double initialLearnRate, ArrayList<Example> examples) {
 
@@ -20,9 +20,9 @@ public class Pocket {
         //start training
 
         try {
-            Double arr[] = {-1000.0, 12.0, 10.0};
-            this.weightVector = new Vector(arr);
-            storedVector = new Vector(arr);
+            //Double arr[] = {-1000.0, 12.0, 10.0};
+            this.weightVector = new Vector(examples.get(0).featureVector.size());
+            storedVector = new Vector(examples.get(0).featureVector.size());
         } catch (Exception e) {
             e.printStackTrace();
         }
